@@ -19,11 +19,11 @@ provisioner:
   name: ansible
   lint:
     name: ansible-lint
+    env:
+      PYTEST_ADDOPTS: "-W ignore::DeprecationWarning"
 scenario:
   name: default
 verifier:
   name: testinfra
   lint:
     name: flake8
-    env:
-      PYTEST_ADDOPTS: "-W ignore::DeprecationWarning"
